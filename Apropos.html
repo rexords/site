@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- En-tête de la page -->
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <title>A propos</title>
+    </head>
+
+    <body>
+        <!-- Corps de la page -->
+        <header>
+            <div id="titreprincipal">
+                <div id="logo">
+                <h1>A propos</h1>
+                </div>
+            </div>
+         <nav>
+            <ul>
+                <li><a href="test.html"> Retourner sur la page d'accueil </a></li>
+                <li><a href="#at"> L'avancement du projet </a></li>
+                <li><a href="#al"> Les difficultés rencontrées </a></li>
+            </ul>
+        </nav>
+        </header>
+        <section>
+        <article>
+        <h1 id="at"> L'avancement du projet </h1>
+        <h1> Pour la première soutenance </h1>
+        <p>
+            Pour la première soutenance, nous avons commencé à créer le jeu :</br>
+            Pour la partie réseau, nous avons décidé de choisir Unet au lieu de Photon car nous avons préféré utiliser un service plus récent.
+            </br>
+            Puis par la suite nous avons instauré le "enable matchmaker" a l'aide d'un script qui s'apelle Host Game, ce script permet à n'importe quel joueur de créer une partie en ligne, cependant nous sommes limité jusqu’à 20 joueurs maximums avec la version gratuite de Unity, c’est une solution amplement suffisante pour nous. Le réseau était simple d’accès avec Unity qui offre des composants comme NetworkManager, ou NetworkIdentity déjà intégrés.
+            </br>
+            Pour le moment le réseau fonctionne, j’ai build et testé avec deux instances sur mon propre PC et également avec les autres membres du groupe, néanmoins il reste à améliorer l’interface du réseau, mais en particulier il faut que je réussisse à mieux synchroniser les mouvements du personnages, car pour le moment nous pouvons instancier jusqu'à 20 personnes, mais les animations ne sont pas encore au point.
+            Nous en avons profité pour faire un menu où l'utilisateur peut rentrer le nom de la salle puis il clique sur le bouton PLAY pour instancier une partie en ligne, et c'est grâce à ce nom que les autres joueurs peuvent rejoindre la room en cliquant dessus.
+            </br>
+            </br>
+            Pour la carte, l'hôpital doit avoir un aspect oppressant, c'est pour cela que peu de lumières sont allumé, que des flaques de sang sont au sol ou que des chaises, tables et lits sont renversés. Le joueur doit avoir l'impression que l'hôpital a été évacué dans le chaos et que des combats ont eu lieu. Nous avons aussi ajouté un incendie pour augmenter la tension ressentie par le joueur.
+            </br>
+            Pour l'instant il y a 4 salles : l'entrée où la partie démarre, la salle de sécurité, le hall d'accueil et la salle d'attente.
+            </br>
+            </br>
+            Pour les animations,5 animations ont été implanté au personnage : la marche avant et arrière, marche droite et gauche ainsi qu'un Idle.
+            </br>
+            </br>
+            Pour le gameplay, partie IA, pour l'instant, nous avons réussi à faire que le zombie reconnaisse un ennemi ( le swat ) et il se dirige vers lui quand ce dernier est à proximité. Le zombie suit alors ce swat mais ne l'attaque pas encore. En se déplaçant, le zombie n'a pas d'animation de marche pour l'instant et "glisse" pour avancer.
+            </br>
+            Et pour la partie controle du joueur, seul les déplacements ont été écrits dans le script, la rotation de la vue n'a pas encore été écrite et le sera d'ici la prochaine soutenance.
+        </p>
+        <h1> Pour la deuxième soutenance </h1>
+        <p>
+            Pour la partie réseau, Pour faire ce menu nous avons eu besoin d’un script que nous avons appelé MainMenu pour menu principal, et qui permet de jouer au jeu ou bien de quitter le jeu. Concernant le menu option nous n'avons pas utilisé de script car nous n'avons utilisé un GameObject.SetActive(false ou true), qui permet de désactiver tel ou tel préfab, cela m'a facilité la tâche que ce soit intégré à Unet.
+            </br>
+            </br>
+            Pour la carte, nous avons rajouté beaucoup de mobilier tel que des lits renversés ou des chaises pour rendre certaines pièces moins vides et augmentées la crédibilité de la map dans ce monde post apocalyptique et avons commencé à créer la deuxième map. En effet après avoir récupéré la cellule-souche du virus le personnage doit s'extraire du bâtiment via les sous sols. Il devra récupérer des clefs à travers le niveau pour ouvrir certaine porte et ainsi pouvoir s'enfuir de l'hôpital.
+            </br>
+            Pour l'instant il y a 4 salles : l'entrée où la partie démarre, la salle de sécurité, le hall d'accueil et la salle d'attente.
+            </br>
+            </br>
+            Pour les animations, notre personnage déclenche désormais 9 animations grâce à ses déplacement et dispose d'une vue contrôlée par la souris.
+            </br>
+            </br>
+            Pour le gameplay, partie IA, le zombie peut repérer le joueur et ne rentre plus dans lui comme il le faisait. Il s'arrête maintenant dès qu'il est a proximité et commence à attaquer le swat. Nous avons donc implémenté un script avec les animations ce qui fait que l'on voit le zombie marcher mais aussi attaquer et lorsqu'il ne trouve personne, il reste sur place à chercher un swat.
+            </br>
+            Et pour la partie controle du joueur, on peut désormais se déplacer librement sur la map avec notre personnage. Un curseur au milieu de l'écran a aussi été implanté, ce curseur va permettre au joueur de viser correctement les zombies ainsi que les objets.
+        </p>
+        <footer>
+        </footer>
+        <h1 id="al"> Difficultés rencontrées</h1>
+        <h1>Lors de la première soutenance : </h1>
+        <p>
+            La partie multijoueur : les difficultés que nous avons rencontré étaient qu’il fallait désactiver certains composants du préfab du joueur lorsque celui-ci n’est pas l’hôte, ou le joueur local. En effet, sans ça, les déplacements de l’un agirait sur l’autre. Il y a également la superposition des audio listeners des différentes caméras qu’il fallait régler. Une autre difficulté était de synchroniser les déplacements : c’est bien beau de pouvoir déplacer votre personnage, mais c’est mieux que votre ami puisse vous voir bouger, que ce soit votre personnage ou votre caméra.
+            </br>
+            </br>
+            Thomas :"Pour moi c'était la première fois que je faisais une map de jeu vidéo et je ne savais pas du tout comment utiliser Unity. J'ai regardé beaucoup de tutos sur youtube et fait quelques tests de mon côté."
+            </br>
+            </br>
+             Pour l'animation : Le tout premier problème rencontré était la synchronisation entre l'animation (les mouvements du personnage) et sa vitesse de déplacement. En effet, au tout début, le personnage se déplaçait beaucoup trop vite par rapport à la vitesse de l'animation et s'arrêtait trop brusquement (ne laissant pas l'animation se terminer). Il a fallut couper certains bout des animations et trouver la vitesse parfaite pour synchroniser totalement les deux. Pour le moment la synchronisation n'est pas parfaite mais elle est totalement acceptable au vu du pourcentage d'avancement fixé pour la première soutenance (20%).Le second problème rencontré était que lorsque l'on passait rapidement d'une animation à une autre, le personnage ne jouait plus aucunes animations, ce qui est assez dérangeant... Le problème venait tout simplement du script C#.
+            </br>
+             Alexis : "J'appelais mon script avec des GetKeyDown ce qui enlevait toute fluidité et bloquait le passage trop rapide entre deux animations. Pour régler ce problème, il a tout simplement fallut enlever le Down."
+             <br>
+             Puis pour le site il a fallu prendre beaucoup de temps pour apprendre les bases du html
+        </p>
+        <h1>Lors de la deuxième soutenance : </h1>
+        <p>
+            La partie multijoueur : le problème était au niveau de la scène Lobby, en particulier au moment ou nous avons implémenté le JoinGame, le bouton PLAY ne fonctionnait plus, nous avions du recommencer plusieurs fois afin de pouvoir résoudre ce problème.
+            </br>
+            </br>
+             Pour l'animation et le gameplay : Lors de la création de l'intelligence artificielle, il était très difficile de le faire marcher que ce soit en animation ou en gameplay vu que les aides trouvées n'étaient que pour des jeux en solo et non en multijoueur
+        </p>
+        </article>
+        </section>
+        <footer>
+        </footer>
+    </body>
+</html>
